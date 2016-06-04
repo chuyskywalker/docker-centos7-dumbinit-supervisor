@@ -11,7 +11,7 @@
 sleep 30
 
 while true; do
-    COUNT=$(supervisorctl status | grep -cv RUNNING)
+    COUNT=$(supervisorctl -c /config/supervisor.ini status | grep -cv RUNNING)
     if [ $COUNT -ne 0 ]; then
         echo "Some processes caught not running:"
         supervisorctl -c /config/supervisor.ini status
