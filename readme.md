@@ -9,3 +9,4 @@ Build your container from this, and add any startup programs into `/config/init`
 ## Watcher
 
 There is a default program called `watcher` which will keep an eye on supervisor'ed processes. If any of them go into a non-`RUNNING` state, it will kill `supervisord`. This makes the container, overall, behave like a single process container. If you do not want this behavior, simply overwrite the file `/config/supervisor/watcher.ini` with something empty.
+
