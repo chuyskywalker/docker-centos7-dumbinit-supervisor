@@ -18,6 +18,5 @@ while true; do
         kill `cat /var/run/supervisord.pid`
         exit 0
     fi
-    echo "All's clear!"
     sleep 5
 done
