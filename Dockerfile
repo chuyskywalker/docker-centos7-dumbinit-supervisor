@@ -26,14 +26,16 @@ RUN echo '--- Yum update' \
  && rm -r consul_0.6.4_linux_amd64.zip \
  && mv consul /usr/bin/consul \
  && echo '--- Base dirs' \
- && mkdir -p /config/{supervisor,init} \
+ && mkdir -p /config/{supervisor,init,consul} \
  && echo '--- Cleanup' \
  && yum clean all \
- && rm -rf /var/cache/yum \
+ && rm -rf /var/cache/yum
 
 COPY /container-files/watcher.sh      /usr/bin/watcher.sh
 COPY /container-files/watcher.ini     /config/supervisor/watcher.ini
 COPY /container-files/supervisor.ini  /config/supervisor.ini
 COPY /container-files/entry.sh        /entry.sh
+COPY /container-files/consul.json     /config/consul/agent.json
+COPY /container-files/consul.ini      /config/supervisor/consul.ini
 
 CMD [ "/entry.sh" ]
