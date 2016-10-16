@@ -1,0 +1,29 @@
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[epel]
+name=Extra Packages for Enterprise Linux 7 - $basearch
+baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+[ius]
+name=IUS Community Packages for Enterprise Linux 7 - $basearch
+baseurl=https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/$basearch
+gpgkey=file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
+
+#[ius-archive]
+#name=IUS Community Packages for Enterprise Linux 7 - $basearch - Archive
+#baseurl=https://dl.iuscommunity.org/pub/ius/archive/CentOS/7/$basearch
+#gpgkey=file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
