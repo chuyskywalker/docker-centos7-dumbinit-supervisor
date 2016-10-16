@@ -1,9 +1,11 @@
 #!/usr/bin/dumb-init /bin/bash
 
 echo "Running any available init scripts:"
-for init in /config/init/*; do
-  echo " -- Running $init..."
-  $init
+find /config/init/ -name "*.sh" -print0 | while read -d $'\0' file
+do
+  echo " -- Running $file..."
+  chmod +x $file
+  $file
 done
 
 echo "Starting supervisor"
